@@ -14,7 +14,7 @@ Permet de générer une tâche générique avec boucle à partir des information
 ### Aide
 
 ```bash
-ansible-generic -h
+python ansible_generic.py -h
 
 usage: ansible-generic [-h] module
 
@@ -30,7 +30,7 @@ options:
 ### Module
 
 ```bash
-ansible-generic <module>
+python ansible_generic.py <module>
 ```
 
 ## Exemple
