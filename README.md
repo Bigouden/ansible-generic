@@ -16,7 +16,7 @@ Permet de générer une tâche générique avec boucle à partir des information
 ```bash
 python ansible_generic.py -h
 
-usage: ansible-generic [-h] module
+usage: ansible_generic.py [-h] module
 
 Template Generic Ansible Loop Task.
 
