@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 #coding: utf-8
 
+''' Ansible Generic '''
+
 import argparse
 import os
 import ansible.cli.doc
@@ -30,10 +32,11 @@ def main():
     CLIARGS['args'] = module
     context.CLIARGS = CLIARGS
     try:
-        unorder_module_options = dict((doc._get_plugins_docs('module', module)[ARGS.module]['doc']['options']))
+        unorder_module_options = dict((doc._get_plugins_docs('module', module)
+                                 [ARGS.module]['doc']['options']))
         order_module_options = dict(sorted(unorder_module_options.items()))
-        print(f'- name: Common Task For {ARGS.module}') 
-        print(f'  {ARGS.module}:') 
+        print(f'- name: Common Task For {ARGS.module}')
+        print(f'  {ARGS.module}:')
         for key, value in order_module_options.items():
             if 'required' in value and value['required']:
                 print(f'    {key}: "{{{{ item.{key} }}}}"')
