@@ -3,7 +3,23 @@ include:
   - project: 'Bigouden/gitlab-ci-templates'
     file: '.gitlab-ci-common.yml'
 
+variables:
+  CONTAINE_ANSIBLE_IMAGE: $CI_REGISTRY/bigouden/alpine-ansible:daily
+
+.standalone:
+  image:
+    name: $CONTAINER_ANSIBLE_IMAGE
+    entrypoint: [""
+  dependencies: []
+
 stages:
   - Quality
   - Security
+  - Test
+
+Ansible Generic:
+  stage: Test
+  extends: .standalone
+  script:
+     - python ansible_generic.py ansible.builtin.template
 ...
