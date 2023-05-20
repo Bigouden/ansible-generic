@@ -2,14 +2,14 @@
 
 ## Description
 
-Permet de générer une tâche générique avec boucle à partir des informations founis par la documentation ansible.
+Permet de générer une tâche générique avec boucle à partir des informations founies par la documentation ansible.
 
 ## Prérequis
 
 - python 3
 - ansible-core
 
-## Utilisation 
+## Utilisation
 
 ### Aide
 
